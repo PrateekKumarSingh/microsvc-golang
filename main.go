@@ -1,9 +1,9 @@
 package main
 
 import (
-	"net/http"
 	"encoding/json"
 	"fmt"
+	"net/http"
 )
 
 func main() {
@@ -13,17 +13,17 @@ func main() {
 }
 
 type Employee struct {
-	Id       string `json:"id"`
+	Id         string `json:"id"`
 	First      string `json:"first"`
-	Last        string `json:"last"`
-	Department  string `json:"department ,omitempty"`
+	Last       string `json:"last"`
+	Department string `json:"department ,omitempty"`
 }
 
 var employees = map[string]Employee{
-	"0000000000": Employee{Id: "101", First: "Susan", Last: "Matthew", Department: "HR"},
-	"0000000001": Employee{Id: "102", First: "Bill", Last: "Gates", Department: "Finance"},
-	"0000000002": Employee{Id: "103", First: "Prateek", Last: "Singh", Department: "Engineering"},
-	"0000000003": Employee{Id: "104", First: "Rakesh", Last: "Singh", Department: "IT"},
+	"0000000000": {Id: "101", First: "Susan", Last: "Matthew", Department: "HR"},
+	"0000000001": {Id: "102", First: "Bill", Last: "Gates", Department: "Finance"},
+	"0000000002": {Id: "103", First: "Prateek", Last: "Singh", Department: "Engineering"},
+	"0000000003": {Id: "104", First: "Rakesh", Last: "Singh", Department: "IT"},
 }
 
 func get_employees() []Employee {
